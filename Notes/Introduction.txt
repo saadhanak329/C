@@ -1,0 +1,11 @@
+-------------------------------------------------------
+INTRODUCTION
+-------------------------------------------------------
+	> Low level language
+	> #include<stdio.h> header file(standard input output)
+	> main() entry point to program
+	> {} begining and ending of the function(code block)
+	> printf() generates output
+	> \n newline character (escape sequence)
+	> return 0 terminates main() function
+	> C is case sensitive

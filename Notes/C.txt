@@ -1,0 +1,444 @@
+													C LANGUAGE
+
+-> INTRODUCTION
+	
+		> Low level language
+		> #include<stdio.h> header file(standard input output)
+		> main() entry point to program
+		> {} begining and ending of the function(code block)
+		> printf() generates output
+		> \n newline character (escape sequence)
+		> return 0 terminates main() function
+		> C is case sensitive
+		
+-> DATA TYPES
+		
+		> int : whole number
+		> float : floating point number
+		> double : double-precision floating point number
+		> char : single character
+		> sizeof : gives memeory requirement for a particular data type
+		
+		    #include<stdio.h>
+			int main()
+			{
+				printf("int: %d \n",sizeof(int));
+				printf("float: %d \n",sizeof(float));
+				printf("double: %d \n:",sizeof(double));
+				printf("char: %d \n",sizeof(char));
+				return 0;
+			}
+			
+			
+			int: 4
+			float: 4
+			double: 8
+			char: 1
+		> %d integer values(format specifiers)
+		> %f float values(format specifiers)
+		> %c char values(format specifiers)
+		> A variable(/ identifier) is a name for an area in memory
+			~ must begin with underscore(_) or letter
+			~ composed of letters,digits,underscores
+			~ data type is must before declaration 
+			~ values of the variable is changed with assignment operator
+		> A constant stores the value that cannot be changed from the initial assignment
+		> #define   preprocessor directive.Uses MACROS(name given to a block of C statements as a pre-processor directive) for defining costant values(does not use any memory space)
+				# define pi=3.14
+		> const  is used declare a constant(uses memory space)	
+				const double pi=3.14;
+		
+
+-> 	INPUT AND OUTPUT
+
+		> getchar() Returns the value of the next single character	
+				#include<stdio.h>
+				int main()
+				{
+					char a=getchar();
+					printf("you entered %c",a);
+					return 0;
+				}
+				
+				s
+				a
+				a
+				d 
+				h 
+				a 
+				n 
+				a 
+				 you entered s
+        
+		> gets() is used to read input as orderd sequence of characters , called as string
+		> string is stored ina string array
+				#include<stdio.h>
+				int main()
+				{
+					char a[100];
+					gets(100);
+					printf("you entered %c",a);
+					return 0;
+				}
+				
+				s 
+				a 
+				a 
+				d 
+				h 
+				a 
+				n 
+				a 
+				
+				you entered s
+		> scan() scans the input that matches the format specifires
+		
+				#include<stdio.h>
+				int main()
+				{
+					int a,b;
+					printf("enter two numbers");
+					scanf("%d %d",&a,&b);
+					printf("\n sum:%d",a+b);
+					retuen 0;
+				}
+				
+				enter two numbers 2
+				3
+				sum:5
+		> & before the variables give the address of the variables 
+		> putchar() outputs a single character
+		> puts() outputs a string of characters
+		> in scanf() & is not needed for string characters
+		> format specifiers
+			~ %d integer
+			~ %c character
+			~ %s string
+			~  %f float
+			~ %x hexadecimal
+		> escape sequesces
+			~ \n new line
+			~ \t horizontal tab
+			~ \\ backslash
+			~ \b back space
+			~ \' single qoute
+			~ \" double qoute
+		
+-> COMMENTS
+		
+		> // a lins of comments
+		> /* lines of comments */
+
+-> ARITHMETIC OPERATIONS 
+	
+		> + addition
+		> - subtraction
+		> * multiplication
+		> / division
+		> % modulo
+	
+        > OPERATION PRECEDENCE
+
+			~ * / % same precedence left to right
+			~ + - same precedence left to write
+		> TYPE CONVERSION
+			~ when a numeric expression contains operands of different data taypes , they are automatically converted as neccessary int the process called as type conversion
+			
+		>  ASSIGNMENT OPERATOR
+				~  int x = 2;
+
+					x += 1;  // 3
+					x -= 1;  // 2
+					x *= 3;  // 6
+					x /= 2;  // 3
+					x %= 2;  // 1
+					x += 3 * 2;  // 7
+		> INCREMENTS AND DECREMENTS
+			~ ++ increments variable by one
+			~ -- decrements variable by one
+			~ ++a first increments the variable and then assigns
+			~ a++ firat assignes value and then increments
+			
+-> CONDITION AND LOOPS
+
+	 > if(conditions)
+		 statements 
+	 
+			~ executes only if comdition is true
+	> Relation expressions  returns either true or false
+		~ < less than
+		~ > greater than
+		~ <= less than or equal to
+		~ >= greter than or equal
+		~ == equal to
+		~ != not equal to 
+	> if(condition)
+		statements
+	 else
+		 statements
+	 
+	> conditional expression  ?:
+		~ int y;
+		int x=3;
+		y=(x>=5)?5:x;
+		
+		// 3
+	> nested if a if condition within another
+	> if -else-if statements
+		~ if(condition)
+			statements
+		 else if(condition)
+			    statements
+		else
+			statements
+	> SWITCH STATEMENT
+		~ The switch statement branches program control by matching results of an expression with a constant case value
+		~ switch(condition)
+		{
+			case 1: statements
+			        break;
+			.
+			.
+			default : statement
+		}
+		
+	> LOGICAL OPERATORS
+		~ && returns true only if both the statements are true
+		~ || retuens true if anyone of the statements are true
+		~ ! returns the reverse of the value
+	> WHILE LOOP
+		~ The while loop statement is called the loop steucture because it executes statements repeatedly while an expression is true,looping over and over again
+		~ while(condition)
+			{
+			statements
+			}
+	> DO-WHILE LOOP
+		~The do-while loop executes the loop statements before evaluating the condition to determine if the loop should be repeatedly
+		do
+		{
+			statements
+		}while(condition);
+		
+		> The break statement is used to for immediately exiting the group
+		> The continue statement is used to remain in the loop but skip ahead to the next iteration
+		> FOR STATEMENTS
+			~ The for statement is a loop sturcture that executes the statenemts a fixed number of times
+			~ for(initialvalue;condition;increment/decrement)
+			{
+				statements
+			}
+			~ Nested for loop is a for loop with in another
+			
+
+-> FUNCTIONS, ARRAYS, AND POINTERS
+	
+		> A function
+			~ a block of code that performs a specific task
+			~ is reuseable
+			~ makes a program easier to test
+			~ can be modified without cahnging the calling  program
+		> When the parameter types and names are included in a decleration ,the decleration is called function prototype
+			~ return_type funtion_name(parameters); //function decleration
+			~ return_type function_name(parameters)
+			{
+				statements
+			}    //function definition
+		> values are passed as agruments in function call
+		> default arguments are passed with values
+		> arguments passed are matched with parameters position
+		> parameters in the function decleration called as formal parameters
+		> the values passed to these parameters are arguments , sometimes called actual paramaters
+		> varaiables declared in a function are called local variables 
+		> variables declared before all the funations are called global variables
+		> static variables have a local scope but are not destroyed when the function is exitied
+			~ prfix static is used
+		> A recursive function is one that calls itself and includes a base class , or exit condition , for ending th recursive calls
+		> ARRAYS
+			~ An array is data structure that stores a collection of related values that are all of same types
+			~ datatype array_name[index]; // array decleration
+			~ datatype array_name[index]={value;values;....}; //initiatlization 
+			~ for(initialvalue;condition;increment)
+			{
+				scanf(reading array values);
+			}
+			~ size cannot be changed once declared
+			~ array_name[index number/subscript]; // accessing array values
+			~ Two -dimensional array is in the form if a table
+			~ array_name[index1][index2];
+			~ array_name[index1][index2]={{value,value,..}{value,value,...}};
+			
+		> PIONTERS
+			~ To represent address we use hex decimal
+			~ A pointer a variable that conatains the address of another variable
+			~ pointer_type *pointer_name; //decleration
+			~ pointers can be assigned the address using & symbol
+			~ *pointer_name; //to know what pointer is pointing to
+			~ pointer_type **pointer_name; //pointer to a pointer
+			~ if a pointer is increased the memory address is increased
+			~ with pointer parameters int functions actual values are altered instead of copy of values
+			~ in functions the arrays are passed as pointers in arguments
+			
+-> STRINGS AND FUNCTION POINTERS
+		
+		> A string in c language is an array of characters that ends with NULL character /0
+		> datatype string_name[index]="string"; //decleration and initialization
+		> datatype sring_name[index]={'s','t','r','i','n','g'}; //another form of initialization
+		> STANDARD LIBRARY STRING FUNCTIONS
+			~ strlen()  string length
+			~ strcat()  string concatination
+			~ strcpy()  stirng copy
+			~ strlwr()  convert string to lower case
+			~ strupr()  convert string to upper case 
+			~ strrev()  convert string to reverse
+			~ strcmp()  strings comparision
+		> Strings have input functions like scanf() , gets() , fgets() 
+			~ gets() has no in-built new line character but fgets() has
+		> Strings have output functions like printf() , putf(), fputs()
+		> Formatted strings
+			~ sprintf() useful for building a string from other datatypes
+			~ sscanf()  scans string of values 
+		> #include<string.h>
+		> CONVERTING STRINGS TO NUMBERS (stdio.h)
+			~ int atoi(str)  ASCII to integer   returns to 0 if first character is not number or no numbers are encountered
+			~ double atof(str)  ASCII to float   returns 0 if first caharacter is not number or no numbers are encountered
+			~ long int atol(str)  ASCII to long int  returns 0 if first character is not number or no numbers are encountered
+		> Function pointer decleration     return_type(*function_name)(parameters)
+		> A void pointer is used to refer any address type in memory and as a decleration that looks like :  void *ptr;
+		> void pointers must be first type casted *(int *)ptr
+		> Using void * return type allows for any return type; also accepts ay type of arguments; const must be used if declering data of parameters
+        > A function pointer used as an argument is sometimes reffred to as callback function because the receving function calls it back
+			~ The function qsort() from stdlib.h is used for this tecnique
+			~ void qsort(void *base, size_t num, size_t width, int (*compare)(const void *, const void *)) 
+					^ void *base    a void pointer to the array
+					^ size_t num    the number of elements in the array
+					^ int (*compare (const void *, const void *)      A function pointer which has two arguments and returns 0 when the arguments have te same value 
+		
+-> STRUCTURES
+		> A structure is a user defined data type that groups related variables of different data types; also called as composite or aggreate datatype
+		> A structure decleration 
+			~ keyword struct
+			~ structure tag for referencing the structure
+			~ {}   members
+		> struct structure_name tag_name;
+			~ use tag and dot operator for accessing values
+		> A typedef keyword creates a type definition that simplfies the code and makes a program to easy to read ; eleminates the use os keyword struct for declaring variables
+		> The variable/tag of other structure can be used as a datatype for a memeber of other structure
+		> struct structure_name *structure_pointer;    definition of pointers in structure
+		> structure_pointer=&structutre_varible;    stores the address of the structure variable
+        > structure_pointer->structure_member;    accessing the sturcture members
+        > A function can have structure paramenters that accept arguments by value when a copy of the structure variale is needed
+		
+
+-> UNIONS
+		> 	union allows to store different datatypes in the same memory location 
+		> union keyword; union tag/variable; {}
+		> unions are used for memory management . limits memory fragmentation
+		> dot(.) operator for accessingg the variables
+		> Unions are often used inside sturctures because a structure can have a member to keep track of which union member stores a values
+		> A pointer to a union points to the memory location allocated to union
+			~ union union_variable *union_pointer;
+		> unions can be used in functions
+		
+-> MEMORY MANAGEMENT
+		>  C automatically allocates space for the variable in an area of memory called the stack. 
+        > sizeof() operator is used to know th size allocated
+		> Dynamic memory allocation is the process of allocating and freeing memory as needed
+		> Dynamic memory is managed with pointers that point to newly allocated blocks of memory in an area called the heap
+		> In addition to automatic memory management using the stack and dynamic memory allocation using the heap, there is statically managed data in main memory for variables that persist for the lifetime of the program.
+        > #include<stdlib.h>
+			~ malloc(bytes) Returns a pointer to a contiguous block of memory that is of size bytes.
+			~ calloc(num_items, item_size) Returns a pointer to a contiguous block of memory that has num_items items, each of size item_size bytes
+			~ realloc(ptr, bytes) Resizes the memory pointed to by ptr to size bytes. The newly allocated memory is not initialized.
+            ~ free(ptr) Releases the block of memory pointed to by ptr. 
+		
+-> FILES AND ERROR HANDLING
+		> FILE datatype for file streaming
+		> stdio.h headerfile
+		> fopen(filename,mode)  for opening a file 
+		> mode operations 
+			~ r   open for readind (file must be present)
+			~ w open for writting (file need not be present)
+			~ a open for append (file need not be present)
+			~ r+ open for reading and writting from the begining
+			~ w+ open for reading and writting , overwritting file 
+			~ a+ open for reding and writting, appending of file
+		> fclose(file_name);  used to close the file created or opened
+		> EOF (end of file) is returned if error in closing the file 
+		> -1 is returned if error in opening the file
+		> Reading from the file	
+			~ fgetc(fp) Returns the next character from the file pointed to by fp. If the end of the file has been reached, then EOF is returned.
+            ~ fgets(buff, n, fp) Reads n-1 characters from the file pointed to by fp and stores the string in buff. A NULL character '\0' is appended as the last character in buff. If fgets encounters a newline character or the end of file before n-1 characters is reached, then only the characters up to that point are stored in buff.
+			~ fscanf(fp, conversion_specifiers, vars) Reads characters from the file pointed to by fp and assigns input to a list of variable pointers vars using conversion_specifiers. As with scanf, fscanf stops reading a string when a space or newline is encountered.
+		> Writting into file
+			~ fputc(char, fp) Writes character char to the file pointed to by fp.
+			~ fputs(str, fp) Writes string str to the file pointed to by fp.
+			~ fprintf(fp, str, vars) Prints string str to the file pointed to by fp. str can optionally include format specifiers and a list of variables vars.
+		> Brinary file I/O
+			~ Binary file mode options for the fopen() function are:
+					- rb open for reading (file must exist)
+					- wb open for writing (file need not exist)
+					- ab open for append (file need not exist)
+					- rb+ open for reading and writing from beginning
+					- wb+ open for reading and writing, overwriting file
+					- ab+ open for reading and writing, appending to file
+		> fwrite(ptr, item_size, num_items, fp) Writes num_items items of item_size size from pointer ptr to the file pointed to by file pointer fp.
+		> fread(ptr, item_size, num_items, fp) Reads num_items items of item_size size from the file pointed to by file pointer fp into memory pointed to by ptr.
+		> fclose(fp) Closes file opened with file fp, returning 0 if close was successful. EOF is returned if there is an error in closing.	
+		> feof(fp) Returns 0 when the end of the file stream has been reached.
+		> Controlling the file pointer
+			~ There are functions in stdio.h for controlling the location of the file pointer in a binary file:
+					ftell(fp) Returns a long int value corresponding to the fp file pointer position in number of bytes from the start of the file.
+					fseek(fp, num_bytes, from_pos) Moves the fp file pointer position by num_bytes bytes relative to position from_pos, which can be one of the following constants:
+							- SEEK_SET start of file
+							- SEEK_CUR current position
+							- SEEK_END end of file
+		> Use errno, perror(), and strerror() to identify errors through error codes.
+		> The exit command immediately stops the execution of a program and sends an exit code back to the calling process. 
+		> The error code is set in a global variable named errno, which is defined in the errno.h header file. 
+		> To output the error code stored in errno, you use fprintf to print to the strerr file stream, the standard error output to the screen
+		> To use errno, you need to declare it with the statement extern int errno; at the top of your program 
+		>  For a more descriptive message about the error, you can use perror(). You can also obtain the message using strerror() in the string.h header file, which returns a pointer to the message text.
+		> perror() must include a string that will precede the actual error message. Typically, there is no need for both perror() and strerror() for the same error, but both are used in the program below for demonstration purposes:
+		> Some of the mathematical functions in the math.h library set errno to the defined macro value EDOM when a domain is out of range.
+		> Similarly, the ERANGE macro value is used when there is a range error.
+		> In addition to checking for a NULL file pointer and using errno, the feof() and ferror() functions can be used for determining file I/O errors:
+		> feof(fp) Returns a nonzero value if the end of stream has been reached, 0 otherwise. feof also sets EOF.
+		> ferror(fp) Returns a nonzero value if there is an error, 0 for no error.
+	
+-> PREPROCESSOR DIRECTIVES
+		> The C preprocessor uses the # directives to make substitutions in program source code before compilation. 
+		> #include Including header files.
+		> #define, #undef Defining and undefining macros.
+		> #ifdef, #ifndef, #if, #else, #elif, #endif Conditional compilation.
+		> #pragma Implementation and compiler specific.
+		> #error, #warning Output an error or warning message An error halts compilation.
+		> A header file declares a collection of functions and macros for a library, a term that comes from the way the collection of code can be reused. 
+		> stdio input/output functions, including printf and file operations.
+		> stdlib memory management and other utilities
+		> string functions for handling strings
+		> errno errno global variable and error code macros
+		> math common mathematical functions
+		> time time/date utilities
+		> A user-defined header file is also given the .h extension, but is referred to with quotation marks, as in "myutil.h". When quotation marks are used, the file is searched for in the source code directory.
+		> The #define directive is used to create object-like macros for constants based on values or expressions. 
+		> #define can also be used to create function-like macros with arguments that will be replaced by the preprocessor.
+		> If a # directive is lengthy, you can use the \ continuation character to extend the definition over more than one line.
+		> In addition to defining your own macros, there are several standard predefined macros that are always available in a C program without requiring the #define directive:
+				~ __DATE__ The current date as a string in the format Mm dd yyyy
+				~ __TIME__ The current time as a string in the format hh:mm:ss
+				~ __FILE__ The current filename as a string
+				~ __LINE__ The current line number as an int value
+				~ __STDC__ 1
+		> The #ifdef, #ifndef, and #undef directives operate on macros created with #define. 
+		> Conditional compilation of segments of code is controlled by a set of directives: #if, #else, #elif, and #endif.
+		
+
+
+
+
+			
+		
+
+				
+
+		
